@@ -1,0 +1,13 @@
+const path = require("path");
+
+//Do not remove or  move this
+
+//THis is uncessary but it is used by sequelize cli to find the config file and the models,seeders and migrations folders
+//Not really used because we maually intialize the models in db.js
+//when we get to migrations this will be useful but for now leave it as is
+module.exports = {
+  config: path.resolve("config/config.js"),
+  "models-path": path.resolve("db/models"),
+  "seeders-path": path.resolve("db/seeders"),
+  "migrations-path": path.resolve("db/migrations"),
+};

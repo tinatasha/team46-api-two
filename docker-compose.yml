@@ -1,0 +1,24 @@
+services:
+  db:
+    image: mysql:8.0
+
+    environment:
+      MYSQL_ROOT_PASSWORD: Disbo@rd
+      MYSQL_DATABASE: manelidb
+      MYSQL_USER: maneliApi
+      MYSQL_PASSWORD: db1234
+    ports:
+      - "3307:3306"
+  api:
+    build: "./"
+    environment:
+      DB_HOST: db
+      DB_USER: maneliApi
+      DB_PASS: db1234
+      DB_NAME: manelidb
+      DB_PORT: 3306
+
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
