@@ -12,7 +12,7 @@ app.use(
   "/shelving_pics",
   express.static(path.join(__dirname, "shelving_pics"))
 ); //serve the files in here as static images
-const port = process.env.API_PORT;
+const port = process.env.PORT || 3001;
 const routes = require("./routes/routes");
 
 const userRoutes = require("./User/userRoutes");
